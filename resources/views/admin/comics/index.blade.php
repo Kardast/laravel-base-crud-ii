@@ -16,7 +16,6 @@
                     <th>Id</th>
                     <th>title</th>
                     <th>description</th>
-                    {{-- <th>street</th> --}}
                     <th>thumb</th>
                     <th>price</th>
                     <th>series</th>
@@ -46,23 +45,12 @@
                             <a href="{{ route('comics.edit', ['comic' => $comic]) }}" class="btn btn-warning">Edit</a>
                         </td>
                         <td>
-                            <form action="" method="post">
-                                <button type="submit" class="btn btn-danger">Delete</button>
-                            </form>
-                        </td>
-                        {{-- <td>
-                            <a href="{{ route('houses.show', ['house' => $house]) }}" class="btn btn-primary">View</a>
-                        </td>
-                        <td>
-                            <a href="{{ route('houses.edit', ['house' => $house]) }}" class="btn btn-warning">Edit</a>
-                        </td>
-                        <td>
-                            <form action="{{ route('houses.destroy', ['house' => $house]) }}" method="post">
+                            <form action="{{ route('comics.destroy', ['comic' => $comic]) }}" method="post">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger">Delete</button>
                             </form>
-                        </td> --}}
+                        </td>
                     </tr>
                 @endforeach
             </tbody>
