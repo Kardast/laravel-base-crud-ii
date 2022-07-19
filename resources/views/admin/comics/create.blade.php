@@ -22,7 +22,7 @@
         </div>
         <div>
             <label for="price">Price</label>
-            <input type="text" name="price" id="price">
+            <input type="number" name="price" id="price">
         </div>
         <div>
             <label for="series">Series</label>
@@ -30,7 +30,7 @@
         </div>
         <div>
             <label for="sale_date">Sale Date</label>
-            <input type="text" name="sale_date" id="sale_date">
+            <input type="date" name="sale_date" id="sale_date">
         </div>
         <div>
             <label for="type">Type</label>

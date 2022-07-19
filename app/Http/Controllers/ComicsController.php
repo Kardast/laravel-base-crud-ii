@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Comic;
+use App\Http\Middleware\RedirectIfAuthenticated;
 use Illuminate\Http\Request;
 
 class ComicsController extends Controller
@@ -33,6 +34,13 @@ class ComicsController extends Controller
         $comic->type = $formData['type'];
 
         $comic->save();
+
+        // in questo modo vieni reindirizzato alla view del comic creato grazie all'id
+        return redirect()->route('comics.show', ['comic' => $comic]);
+
+        // in questo modo invece vieni reindirizzato all'index per esempio
+        // return redirect()->route('comics.index');
+
 
     }
 
