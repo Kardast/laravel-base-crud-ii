@@ -21,4 +21,6 @@
             @endforeach
         </tbody>
     </table>
+    <a href="{{ route('comics.index') }}">Vai a Comics</a>
+
 @endsection

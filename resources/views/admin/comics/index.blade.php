@@ -22,6 +22,7 @@
                     <th>series</th>
                     <th>sale date</th>
                     <th>type</th>
+                    <th>action</th>
                     {{-- <th colspan="3">Action</th> --}}
                 </tr>
             </thead>
@@ -39,10 +40,10 @@
                         <td>{{ $comic->sale_date }}</td>
                         <td>{{ $comic->type }}</td>
                         <td>
-                            <a href="" class="btn btn-primary">View</a>
+                            <a href="{{ route('comics.show', ['comic' => $comic]) }}" class="btn btn-primary">View</a>
                         </td>
                         <td>
-                            <a href="" class="btn btn-warning">Edit</a>
+                            <a href="{{ route('comics.edit', ['comic' => $comic]) }}" class="btn btn-warning">Edit</a>
                         </td>
                         <td>
                             <form action="" method="post">

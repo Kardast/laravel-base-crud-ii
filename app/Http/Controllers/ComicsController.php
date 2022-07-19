@@ -24,16 +24,18 @@ class ComicsController extends Controller
         // dd($request->all());
         $formData = $request->all();
 
-        $comic = new Comic();
-        $comic->title = $formData['title'];
-        $comic->description = $formData['description'];
-        $comic->thumb = $formData['thumb'];
-        $comic->price = $formData['price'];
-        $comic->series = $formData['series'];
-        $comic->sale_date = $formData['sale_date'];
-        $comic->type = $formData['type'];
+        // $comic = new Comic();
+        // $comic->title = $formData['title'];
+        // $comic->description = $formData['description'];
+        // $comic->thumb = $formData['thumb'];
+        // $comic->price = $formData['price'];
+        // $comic->series = $formData['series'];
+        // $comic->sale_date = $formData['sale_date'];
+        // $comic->type = $formData['type'];
 
-        $comic->save();
+        // $comic->save();
+
+        $comic = Comic::create($formData);
 
         // in questo modo vieni reindirizzato alla view del comic creato grazie all'id
         return redirect()->route('comics.show', ['comic' => $comic]);
@@ -51,14 +53,16 @@ class ComicsController extends Controller
         return view('admin.comics.show', compact('comic'));
     }
 
-    public function edit($id)
+    public function edit(Comic $comic)
     {
-        //
+        return view('admin.comics.edit', compact('comic'));
     }
 
-    public function update(Request $request, $id)
+    public function update(Request $request, Comic $comic)
     {
-        //
+        $formData = $request->all();
+        $comic->update($formData);
+        return redirect()->route('comics.show', ['comic' => $comic]);
     }
 
     public function destroy($id)
